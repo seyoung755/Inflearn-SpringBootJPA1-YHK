@@ -22,4 +22,6 @@ public class Member {
 
     @OneToMany(mappedBy = "member") // Orders 테이블의 member를 반영할 뿐, 스스로 변경할 수 없다.
     private List<Order> orders = new ArrayList<>();
+
+
 }
