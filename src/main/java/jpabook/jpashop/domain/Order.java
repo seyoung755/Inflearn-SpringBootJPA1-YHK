@@ -27,7 +27,7 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    @OneToOne(fetch = LAZY, cascade = ALL)
+    @OneToOne(fetch = LAZY, cascade = ALL) // cascade 를 통하면 order를 저장할 때 자동으로 delivery도 저장이 된다.
     @JoinColumn(name = "delivery_id")
     private Delivery delivery; // Order를 중심으로 Delivery를 조회하는 경우가 많기 때문에 Order가 FK를 가지고 연관관계의 주인이 됨.
 
